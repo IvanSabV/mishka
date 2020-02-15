@@ -1,5 +1,139 @@
+/* colors.less*/
+@shadow: #ececec;
+@bg-color: #f9f9f9;
+@main: #63d1bb;
+
+/* mixins.less */
+
+.container(@width; @padding) {
+  width: @width;
+  padding-left: @padding;
+  padding-right: @padding;
+}
+
+.center(@width) {
+  width: @width;
+  margin: 0 auto;
+}
+
+.font(@size; @weight; @line-height) {
+  font-size: @size;
+  font-weight: @weight;
+  line-height: @line-height;
+}
+
+/* variables.less */
+
+@tablet-width: 768px;
+@desktop-width: 1200px;
+
+
+/* scaffolding.less */
+@font-face {
+  font-weight: normal;
+  font-family: 'OpenSans';
+  font-style: normal;
+  src: url('../fonts/opensans.woff2') format('woff2'), url('../fonts/opensans.woff') format('woff');
+}
+
+@font-face {
+  font-weight: bold;
+  font-family: 'OpenSans';
+  font-style: normal;
+  src: url('../fonts/opensansbold.woff2') format('woff2'), url('../fonts/opensansbold.woff') format('woff');
+}
+
 body {
-  background-color: #ffffff;
-  width: 100px;
-  font-size: large;
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-size: 15px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* header.less */
+
+.head {
+  display: flex;
+  flex-direction: column;
+  box-shadow: inset 0 1px 0 0 @shadow, inset 0 -1px 0 0 @shadow;
+
+  &__wrapper {
+    margin: 0 auto;
+    width: 260px;
+    padding: 22px 30px;
+  }
+  &__nav-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  &__logo {
+    height: 35px;
+  }
+  &__nav {
+    margin-left: 67px;
+  }
+}
+
+
+/* main.less */
+
+.main {
+  background: url(../img/hero-mobile.jpg) no-repeat 0 0;
+  background-position: 50% -15px;
+  background-color: @bg-color;
+  &__title {
+    font-size: 27px;
+    line-height: 30px;
+    .container(260px; 30px);
+    margin: 0 auto;
+    padding-top: 75px;
+    padding-bottom: 120px;
+    text-align: center;
+  }
+
+  .catalog-block {
+    .center(320px);
+
+    color: white;
+
+    h3 {
+      .font(19px; 700; 24px);
+    }
+
+    &__item-interior {
+      .container(260px; 30px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 103px;
+      background-color: @main;
+
+      .img-interior {
+        margin-right: 9px;
+        opacity: 50%;
+      }
+    }
+    &__item-toys {
+      .container(260px; 30px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 103px;
+      background-color: #56c3b2;
+
+      .img-toys {
+        opacity: 50%;
+      }
+    }
+  }
+
 }
