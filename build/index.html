@@ -7,6 +7,7 @@
   <link rel="preload" href="fonts/opensans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/opensansbold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/main.min.css">
+
 </head>
 <body>
 
@@ -14,11 +15,49 @@
     <div class="head__wrapper">
       <div class="head__nav-top">
         <a class="head__logo">
-          <img class="head__logo" width="86" src="img/mishka-logo-mobile.svg">
+          <picture>
+          <source media="(min-width: 1150px)" srcset="img/mishka-logo-desktop.svg">
+          <source media="(min-width: 768px)" srcset="img/mishka-logo-tablet.svg">
+          <img class="head__logo-img" width="86" src="img/mishka-logo-mobile.svg">
+        </picture>
         </a>
-        <div class="head__nav">
-          <img class="head__navi" width="20" src="img/icon-menu.svg">
+      </div>
+      <div class="nav-main nav-main--closed">
+        <div class="head__nav nav-main__icon">
+          <img class="img-nav" width="20" src="img/icon-menu.svg">
         </div>
+        <nav class="menu-main nav-main__left">
+          <ul class="menu-main__list">
+            <li class="menu-main__item">
+              <a class="menu-main__link" href="#">Каталог товаров</a>
+            </li>
+            <li class="menu-main__item">
+              <a class="menu-main__link" href="#">Вязание на заказ</a>
+            </li>
+            <li class="menu-main__item menu-main__item--desktop">
+              <a class="menu-main__link menu-main__link--desktop" href="#">Новые поступления</a>
+            </li>
+            <li class="menu-main__item menu-main__item--desktop">
+              <a class="menu-main__link menu-main__link--desktop" href="#">Распродажа</a>
+            </li>
+          </ul>
+        </nav>
+        <form class="search-form nav-main__form" >
+          <input class="search-form__item" type="search" name="search" placeholder="Поиск по сайту">
+          <img class="search-form__icon" width="18" src="img/icon-search.svg">
+        </form>
+        <ul class="cart-del nav-main__right">
+          <li class="cart-del__item">
+            <a class="cart-del__link" href="#">
+              <img class="cart-del__icon" width="21" src="img/icon-cart.svg">
+            Корзина: пока пуста</a>
+          </li>
+          <li class="cart-del__item cart-del__item--tablet">
+            <a class="cart-del__link cart-del__link--tablet" href="#">
+            Бесплатная доставка по России</a>
+          </li>
+        </ul>
+
       </div>
     </div>
   </header>
@@ -76,7 +115,7 @@
         <img class="features__main-img" src="img/triple-set-mobile.jpg">
       </picture>
       <p class="features__cost">Цена: 990 руб.</p>
-      <button class="features__button">Заказать</button>
+      <button class="features__button" type="button">Заказать</button>
     </section>
 
     <section class="about-us">
@@ -152,9 +191,39 @@
 
       </div>
       <div class="footer__copyright">Разработано
-        <img class="img-copyright" width="27" src="img/htmlacademy.svg">
+        <img class="img-copyright" width="47" src="img/htmlacademy.svg">
       </div>
     </div>
   </footer>
+
+  <section class="cart-add cart-add--closed">
+    <div class="cart-add__wrapper">
+      <h2 class="cart-add__title">Добавить в корзину</h2>
+      <form class="cart-add__form" >
+        <fieldset class="cart-add__choice choice">
+          <legend class="choice__title">Выберите размер:</legend>
+          <ul class="choice__list">
+            <li class="choice__item">
+              <input class="visually-hidden choice__flag" type="checkbox" name="S" id="checkbox-s">
+              <label class="choice__name" for="checkbox-s">S</label>
+            </li>
+            <li class="choice__item">
+              <input class="visually-hidden choice__flag" type="checkbox" name="M" id="checkbox-m">
+              <label class="choice__name" for="checkbox-m">M</label>
+            </li>
+            <li class="choice__item">
+              <input class="visually-hidden choice__flag" type="checkbox" name="L" id="checkbox-l">
+              <label class="choice__name" for="checkbox-l">L</label>
+            </li>
+          </ul>
+        </fieldset>
+        <button class="button cart-add__add" type="submit">Добавить</button>
+      </form>
+    </div>
+  </section>
+
+  <script src="js/script.js"></script>
+
+
 </body>
 </html>
