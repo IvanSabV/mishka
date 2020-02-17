@@ -1015,6 +1015,10 @@ p {
       .font(17px; 400; 30px);
     }
 
+    &__author {
+      margin-bottom: 50px;
+    }
+
     &__author-name {
       width: 255px;
       font-size: 18px;
@@ -1026,7 +1030,7 @@ p {
       bottom: 0;
       width: 160px;
       margin: 0;
-      padding-bottom: 124px;
+      padding-bottom: 174px;
       padding-right: 68px;
     }
 
@@ -1188,7 +1192,7 @@ p {
     }
 
     &__title {
-      margin-left: -4px;
+      margin-top: 0;
       margin-bottom: 50px;
       .font(43px; 700; 50px);
     }
@@ -1222,6 +1226,7 @@ p {
       width: @tablet-width;
       height: 457px;
       margin-bottom: 55px;
+      padding: 0;
 
       &::after {
         top: 139px;
@@ -1304,6 +1309,10 @@ footer {
   .container(260px; 30px);
   margin: 0 auto;
 
+  &__logo {
+    display: none;
+  }
+
   &__icons {
     display: flex;
     justify-content: space-around;
@@ -1326,24 +1335,49 @@ footer {
 
 @media (min-width: @tablet-width) {
   .footer {
+      height: 142px;
       position: relative;
       display: flex;
       align-items: center;
       .container(668px; 50px);
+      justify-content: space-between;
 
     &__logo {
       display: block;
       position: relative;
       left: 0;
-      width: 102px;
+      width: 184px;
       height: 34px;
-      padding-top: 51px;
-      padding-bottom: 57px;
+    }
+
+    &__icons {
+      box-shadow: none;
+      width: 140px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+    }
+
+    &__copyright {
+      padding-top: 0;
+      justify-content: flex-end;
     }
   }
 }
 
+@media (min-width: @desktop-width) {
+  .footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    .container(1050px; 50px);
+	  justify-content: space-between;
+  }
 
+  .img-copyright {
+    width: 47px;
+  }
+}
 
 
 /* cart-add.less */
@@ -1516,5 +1550,155 @@ input[type="radio"].visually-hidden {
   }
 }
 
-/* nav-menu.less*/
+/* catalog.less*/
 
+.main-catalog {
+  &__head {
+    margin-bottom: 30px;
+    background-color: #f1f1f1;
+
+  }
+
+  &__title {
+   display: block;
+    .container(260px; 30px);
+    margin: 0 auto;
+    padding-top: 70px;
+    padding-bottom: 76px;
+    .font(27px; 700; 30px);
+    text-align: center;
+  }
+}
+
+.catalog {
+  .container(260px; 30px);
+  margin: 0 auto;
+  margin-bottom: 31px;
+
+  &__items {
+    .null();
+    list-style: none;
+  }
+}
+
+.item {
+  margin-bottom: 30px;
+
+  &__text-info {
+    margin-top: -7px;
+    border: 1px solid @border-clr;
+  }
+
+  &__name {
+    margin-left: 28px;
+    margin-right: 28px;
+    margin-bottom: 20px;
+    padding-top: 28px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid @border-clr;
+  }
+
+  &__title {
+    .null();
+    margin-bottom: 7px;
+    .font(17px; 700; 24px);
+  }
+
+  &__info {
+    .null();
+    font-size: 13px;
+  }
+
+  &__buy {
+    position: relative;
+    display: block;
+    margin-left: 28px;
+    margin-right: 28px;
+    margin-bottom: 28px;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 1px;
+    right: -1px;
+    width: 20px;
+    height: 19px;
+    opacity: 20%;
+  }
+
+}
+
+
+/* production.less */
+
+.production {
+  .container(260px; 30px);
+  .center(260px);
+  margin: 0 auto;
+  margin-bottom: 58px;
+
+  &__content {
+    box-sizing: border-box;
+    position: relative;
+    border: 1px solid @border-clr;
+  }
+
+  &__head {
+    display: flex;
+  }
+
+  &__ico {
+    margin-left: 33px;
+  }
+
+  &__title {
+    position: relative;
+    width: 130px;
+    .null();
+    margin-left: auto;
+    margin-right: 40px;
+    padding-top: 24px;
+    padding-bottom: 23px;
+    padding-left: 25px;
+    .font(17px; 700; 24px);
+  }
+
+  &__video {
+    position: relative;
+    left: -1px;
+     background: url("../img/video-mobile@1x.jpg") no-repeat 0 0;
+  }
+
+  &__btn {
+    position: absolute;
+
+    top: 132px;
+    left: 79px;
+    z-index: 1;
+
+    width: 101px;
+    height: 77px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    background: url("../img/icon-play.svg") no-repeat 0 0;
+
+  }
+
+  &__info {
+    padding-top: 21px;
+    padding-right: 42px;
+    padding-bottom: 25px;
+    padding-left: 33px;
+    font-size: 13px;
+    line-height: 24px;
+  }
+
+  &__order {
+    display: block;
+    .button(193px);
+    margin: 0 auto;
+    margin-bottom: 32px;
+  }
+
+}
