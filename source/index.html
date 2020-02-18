@@ -14,7 +14,7 @@
   <header class="head">
     <div class="head__wrapper">
       <div class="head__nav-top">
-        <a class="head__logo">
+        <a class="head__logo" href="index.html">
           <picture>
           <source media="(min-width: 1150px)" srcset="img/mishka-logo-desktop.svg">
           <source media="(min-width: 768px)" srcset="img/mishka-logo-tablet.svg">
@@ -32,7 +32,7 @@
               <a class="menu-main__link" href="catalog.html">Каталог товаров</a>
             </li>
             <li class="menu-main__item">
-              <a class="menu-main__link" href="#">Вязание на заказ</a>
+              <a class="menu-main__link" href="form.html">Вязание на заказ</a>
             </li>
             <li class="menu-main__item menu-main__item--desktop">
               <a class="menu-main__link menu-main__link--desktop" href="#">Новые поступления</a>
@@ -202,9 +202,11 @@
 
   <footer>
     <div class="footer">
-			<div class="footer__logo">
-        <img class="img-logo" width="102" src="img/logo-footer.svg">
-      </div>
+			<a class="footer__logo"  href="index.html">
+        <svg class="footer__logo" width="102">
+          <use xlink:href="img/sprite.svg#icon-logo-footer"></use>
+        </svg>
+      </a>
       <div class="footer__icons">
         <a class="footer__social" href="#">
           <img class="footer-icon-1" width="21" src="img/icon-inst.svg">
