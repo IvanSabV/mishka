@@ -44,17 +44,21 @@
         </nav>
         <form class="search-form nav-main__form" >
           <input class="search-form__item" type="search" name="search" placeholder="Поиск по сайту">
-          <img class="search-form__icon" width="18" src="img/icon-search.svg">
+          <svg class="search-form__icon" width="18">
+            <use xlink:href="img/sprite.svg#icon-search"></use>
+          </svg>
         </form>
         <ul class="cart-del nav-main__right">
           <li class="cart-del__item">
             <a class="cart-del__link" href="#">
-              <img class="cart-del__icon" width="21" src="img/icon-cart.svg">
-            Корзина: пока пуста</a>
+              <svg class="cart-del__icon" width="20">
+                <use xlink:href="img/sprite.svg#icon-cart"></use>
+              </svg>
+              Корзина: пока пуста</a>
           </li>
-          <li class="cart-del__item cart-del__item--tablet">
-            <a class="cart-del__link cart-del__link--tablet" href="#">
-            Бесплатная доставка по России</a>
+          <li class="cart-del__item--tablet">
+            <p class="cart-del__link--tablet" href="#">
+            Бесплатная доставка по России</p>
           </li>
         </ul>
 
@@ -87,7 +91,9 @@
               </div>
               <div class="item__buy">
                 <b class="item__cost">1 200 руб.</b>
-                <img class="item__icon" width="20" src="img/icon-cart.svg">
+                <svg class="item__icon" width="20">
+                  <use xlink:href="img/sprite.svg#icon-cart"></use>
+                </svg>
               </div>
             </div>
           </a>
@@ -110,7 +116,9 @@
               </div>
               <div class="item__buy">
                 <b class="item__cost">690 руб.</b>
-                <img class="item__icon" width="20" src="img/icon-cart.svg">
+                <svg class="item__icon" width="20">
+                  <use xlink:href="img/sprite.svg#icon-cart"></use>
+                </svg>
               </div>
             </div>
           </a>
@@ -133,7 +141,9 @@
               </div>
               <div class="item__buy">
                 <b class="item__cost">1 500 руб.</b>
-                <img class="item__icon" width="20" src="img/icon-cart.svg">
+                <svg class="item__icon" width="20">
+                  <use xlink:href="img/sprite.svg#icon-cart"></use>
+                </svg>
               </div>
             </div>
           </a>
@@ -166,17 +176,25 @@
       </a>
       <div class="footer__icons">
         <a class="footer__social" href="#">
-          <img class="footer-icon-1" width="21" src="img/icon-inst.svg">
+          <svg class="footer__icon" width="21">
+            <use xlink:href="img/sprite.svg#icon-inst"></use>
+          </svg>
         </a>
         <a class="footer__social" href="#">
-          <img class="footer-icon-2" width="15" src="img/icon-fb.svg">
+          <svg class="footer__icon" width="15">
+            <use xlink:href="img/sprite.svg#icon-fb"></use>
+          </svg>
         </a>
         <a class="footer__social" href="#">
-          <img class="footer-icon-3" width="23" src="img/icon-twitter.svg">
+          <svg class="footer__icon" width="23">
+            <use xlink:href="img/sprite.svg#icon-twitter"></use>
+          </svg>
         </a>
       </div>
       <div class="footer__copyright">Разработано
-        <img class="img-copyright" width="27" src="img/htmlacademy.svg">
+        <svg class="footer__copyright-img" width="27">
+          <use xlink:href="img/sprite.svg#icon-htmlacademy"></use>
+        </svg>
       </div>
     </div>
   </footer>

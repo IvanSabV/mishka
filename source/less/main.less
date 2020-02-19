@@ -11,6 +11,7 @@
 @border-clr: #ececec;
 @border-clr-dark: #000000;
 @logo: #46c1ae;
+@mail: #46c1ae;
 @link: #000000;
 @line: #e5e5e5;
 @placeholder: rgba(68, 68, 68, 0.3);
@@ -187,8 +188,15 @@ input, textarea {
     &__logo {
       width: 148px;
       height: 73px;
-
      }
+
+    &__logo:hover {
+      opacity: 60%;
+    }
+
+    &__logo:active {
+      opacity: 30%;
+    }
 
     &__logo-img {
       width: 148px;
@@ -215,6 +223,11 @@ input, textarea {
       .font(17px; 700; 24px);
       color: @link;
     }
+
+    &:focus::placeholder,
+    &:active::placeholder {
+      opacity: 30%;
+    }
   }
 
   &__icon {
@@ -225,6 +238,16 @@ input, textarea {
     height: 18px;
     opacity: 20%;
   }
+
+  &__item:hover ~ &__icon {
+    opacity: 100%;
+    fill: @main;
+  }
+
+  &__item:focus ~ &__icon {
+    opacity: 30%;
+    fill: @main;
+  }
 }
 
 @media (min-width: @tablet-width) {
@@ -232,6 +255,7 @@ input, textarea {
     min-height: 89px;
     margin-left: auto;
     box-shadow: 1px 0 0 0 @border-clr;
+    z-index: 1;
 
     &__item {
       width: 83px;
@@ -278,6 +302,7 @@ input, textarea {
 .cart-del {
   list-style: none;
   .null();
+  z-index: 1;
 
   &__item--tablet {
     display: none;
@@ -293,6 +318,14 @@ input, textarea {
     color: @link;
     text-decoration: none;
     box-shadow: 0 -1px 0 0 @border-clr;
+
+    &:hover {
+      opacity: 60%;
+    }
+
+    &:active {
+      opacity: 30%;
+    }
   }
 
   &__icon {
@@ -302,6 +335,17 @@ input, textarea {
     width: 21px;
     height: 18px;
     opacity: 20%;
+  }
+
+  &__link:hover &__icon,
+  &__link:focus &__icon {
+    opacity: 100%;
+    fill: @main;
+  }
+
+  &__link:active &__icon {
+    fill: @main;
+    opacity: 30%;
   }
 
 }
@@ -338,6 +382,7 @@ input, textarea {
       .font(15px; 400; 24px);
       text-align: right;
       box-shadow: none;
+      text-decoration: none;
     }
   }
 }
@@ -436,6 +481,14 @@ input, textarea {
     .null();
   }
 
+  &__item:hover {
+    opacity: 60%;
+  }
+
+  &__item:active {
+    opacity: 30%;
+  }
+
   &__item--desktop {
     display: none;
   }
@@ -494,7 +547,7 @@ input, textarea {
     }
 
     &__item {
-      height: 89px;
+      height: 77px;
     }
 
     &__item:first-child {
@@ -580,27 +633,65 @@ input, textarea {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 103px;
+    height: 119px;
     background-color: @main;
 
     .img-interior {
       margin-right: 9px;
       opacity: 50%;
     }
+
+    &:hover {
+      box-shadow: 0 -5px 0 0 @main;
+
+      h3 {
+        margin-top: 5px;
+      }
+
+      .img-interior {
+        margin-bottom: 5px;
+        opacity: 70%;
+      }
+    }
+
+    &:active {
+      h3, .img-interior{
+      opacity: 30%;
+    }
+    }
   }
+
   &__item-toys {
     .container(260px; 30px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 103px;
+    height: 119px;
     background-color: @main-dark;
 
     .img-toys {
       opacity: 50%;
     }
-  }
 
+    &:hover {
+      box-shadow: 0 -5px 0 0 @main-dark;
+
+      h3 {
+        margin-top: 5px;
+      }
+
+      .img-toys {
+        margin-bottom: 5px;
+        opacity: 70%;
+      }
+    }
+
+    &:active {
+      h3, .img-toys{
+      opacity: 30%;
+    }
+    }
+  }
 }
 
 @media (min-width: @tablet-width) {
@@ -710,6 +801,17 @@ input, textarea {
 
   &__button {
     .button();
+  }
+
+  &__button:hover,
+  &__button:focus {
+    background-color: @btn-color;
+    color: @btn-color-hover;
+    cursor: pointer;
+  }
+
+  &__button:active {
+    color: @btn-color-active;
   }
 
   &::after {
@@ -961,12 +1063,23 @@ input, textarea {
     border-right: none;
     display: flex;
     justify-content: center;
+    outline: none;
+    cursor: pointer;
 
     &::after {
       content: "";
       width: 50px;
       height: 26px;
-      background: url(../img/huge-arrow-left.svg) no-repeat 0 0;    }
+      background: url(../img/huge-arrow-left.svg) no-repeat 0 0;
+    }
+
+    &:hover {
+      opacity: 60%;
+    }
+
+    &:active {
+      opacity: 30%;;
+    }
   }
 
   &__but-right {
@@ -975,6 +1088,8 @@ input, textarea {
     border: 1px solid @border-clr;
     display: flex;
     justify-content: center;
+    outline: none;
+    cursor: pointer;
 
     &::after {
       content: "";
@@ -982,11 +1097,28 @@ input, textarea {
       height: 26px;
       background: url(../img/huge-arrow-right.svg) no-repeat 0 0;
     }
+
+    &:hover {
+      opacity: 60%;
+    }
+
+    &:active {
+      opacity: 30%;;
+    }
   }
 
   &__write {
     .button();
 
+    &:hover {
+      background-color: @btn-color;
+      color: @btn-color-hover;
+      cursor: pointer;
+    }
+
+    &:active {
+      color: @btn-color-active;
+    }
   }
 
   &::after {
@@ -1144,6 +1276,14 @@ input, textarea {
       color: @link;
       border-bottom: 1px solid @main;
       text-decoration: none;
+
+      &:hover {
+        color: @mail;
+      }
+
+      &:active {
+        opacity: 30%;
+      }
     }
   }
 
@@ -1179,6 +1319,16 @@ input, textarea {
     .button();
     display: flex;
     justify-content: center;
+  }
+
+  &__write-us:hover {
+    background-color: @btn-color;
+    color: @btn-color-hover;
+    cursor: pointer;
+  }
+
+  &__write-us:active {
+    color: @btn-color-active;
   }
 
 }
@@ -1262,6 +1412,7 @@ input, textarea {
   .contacts {
     .container(1050px; 50px);
     display: flex;
+    justify-content: flex-end;
     padding-top: 78px;
     padding-bottom: 105px;
 
@@ -1272,7 +1423,7 @@ input, textarea {
 
     &__container {
       width: 350px;
-      padding-left: 175px;
+      padding: 0 0 0 175px;
     }
 
     &__title {
@@ -1340,10 +1491,20 @@ footer {
     .font(19px; 700; 18px);
     padding-top: 20px;
   }
-}
 
-.img-copyright {
-  padding-left: 30px;
+  &__copyright-img {
+    padding-left: 30px;
+    fill: @main;
+    cursor: pointer;
+  }
+
+  &__icon:hover {
+    fill: @logo;
+  }
+
+  &__icon:active {
+    opacity: 30%;
+  }
 }
 
 @media (min-width: @tablet-width) {
@@ -1386,7 +1547,17 @@ footer {
       padding-top: 0;
       justify-content: flex-end;
     }
+
+    &__copyright-img:hover {
+      fill: @logo;
+    }
+
+    &__copyright-img:active {
+      opacity: 30%;
+    }
   }
+
+
 }
 
 @media (min-width: @desktop-width) {
@@ -1396,11 +1567,11 @@ footer {
     align-items: center;
     .container(1050px; 50px);
 	  justify-content: space-between;
-  }
 
-  .img-copyright {
+  &__copyright-img {
     width: 47px;
   }
+}
 }
 
 
@@ -1720,6 +1891,38 @@ input[type="radio"].visually-hidden {
     opacity: 20%;
   }
 
+  &:hover &__icon {
+    opacity: 100%;
+    fill: @main;
+  }
+
+  &:active &__icon {
+    fill: @main;
+    opacity: 30%;
+  }
+
+  &:hover &__title {
+    opacity: 60%;
+  }
+
+  &:active &__title {
+  opacity: 30%;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .item__text-info {
+      box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+    }
+  }
+
+  &:active {
+    .item__text-info {
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.1);
+    }
+  }
+
 }
 
 @media (min-width: @tablet-width) {
@@ -1836,6 +2039,17 @@ input[type="radio"].visually-hidden {
     box-sizing: border-box;
     position: relative;
     border: 1px solid @border-clr;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+
+    }
+
+    &:active {
+      box-shadow: 0 3px 5px 0 rgba(0,0,0,0.1);
+
+    }
   }
 
   &__head {
@@ -1872,18 +2086,25 @@ input[type="radio"].visually-hidden {
 
   &__btn {
     position: absolute;
-
     top: 132px;
     left: 79px;
     z-index: 1;
-
     width: 101px;
     height: 77px;
     border: none;
     outline: none;
     background-color: transparent;
     background: url("../img/icon-play.svg") no-repeat 0 0;
+    cursor: pointer;
 
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &:active {
+      transform: scale(0.8);
+      opacity: 30%;
+    }
   }
 
   &__info {
@@ -1902,6 +2123,15 @@ input[type="radio"].visually-hidden {
     margin-bottom: 32px;
   }
 
+  &__order:hover {
+    background-color: @btn-color;
+    color: @btn-color-hover;
+    cursor: pointer;
+  }
+
+  &__order:active {
+    color: @btn-color-active;
+  }
 }
 
 
@@ -2173,6 +2403,9 @@ input[type="radio"].visually-hidden {
       cursor: pointer;
     }
 
+    &:active {
+      color: @btn-color-active;
+    }
 
   }
 }
@@ -2637,7 +2870,7 @@ input[type="radio"].visually-hidden {
   &__field:hover ~ &__icon,
   &__field:focus ~ &__icon,
   &__field:active ~ &__icon {
-    opacity: 1;
+    opacity: 100%;
     fill: @main;
   }
 }
@@ -2748,7 +2981,7 @@ input[type="radio"].visually-hidden {
   &__field:hover ~ &__icon,
   &__field:focus ~ &__icon,
   &__field:active ~ &__icon {
-    opacity: 1;
+    opacity: 100%;
     fill: @main;
   }
 }
