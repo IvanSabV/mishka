@@ -1,0 +1,33 @@
+/* catalog.less */
+
+.catalog {
+  .container(260px; 30px);
+  margin: 0 auto;
+  margin-bottom: 31px;
+
+  &__items {
+    .null();
+    list-style: none;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .catalog {
+    .container(668px; 50px);
+    margin-bottom: 53px;
+    padding-top: 42px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .catalog {
+    width: 1050px;
+    margin-bottom: 57px;
+    padding-top: 85px;
+
+    &__items {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

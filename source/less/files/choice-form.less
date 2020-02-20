@@ -1,0 +1,88 @@
+/* choice */
+
+.choice {
+  border: none;
+
+  &__title {
+    margin-bottom: 23px;
+    line-height: 30px;
+    color: @popup-title;
+    text-align: center;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    .container(260px; 30px);
+    margin: 0 auto;
+    margin-bottom: 31px;
+    list-style: none;
+  }
+
+  &__name {
+    box-sizing: border-box;
+    display: inline-block;
+    cursor: pointer;
+    width: 82px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    .font(17px; 700; 16px);
+    text-align: center;
+    border: 2px solid @popup-item-border;
+  }
+
+  &__name:hover {
+    border-color: @popup-item-border-hov;
+  }
+
+  &__flag:checked ~ &__name {
+    border-color: @main;
+  }
+}
+
+/* form */
+
+.form {
+  .container(260px; 30px);
+  margin: 0 auto;
+
+  &__fieldset {
+    border: none;
+  }
+
+  &__legend {
+    position: relative;
+    .font(17px; 700; 16px);
+    color: @main;
+    text-transform: uppercase;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 7px;
+      left: 62px;
+      width: 198px;
+      height: 1px;
+      background-color: @main;
+    }
+  }
+
+  &__list {
+      list-style: none;
+  }
+
+  &__label {
+    .font(17px; 700; 18px);
+  }
+
+  &__notice {
+    margin-left: -1px;
+    margin-bottom: 31px;
+    .font(14px; 400; 16px);
+  }
+
+  &__button {
+    .button(260px);
+    margin-bottom: 55px;
+  }
+}

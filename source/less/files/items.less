@@ -1,0 +1,177 @@
+/* items.less */
+
+.item {
+  margin-bottom: 30px;
+
+  &__text-info {
+    margin-top: -7px;
+    border: 1px solid @border-clr;
+  }
+
+  &__name {
+    margin-left: 28px;
+    margin-right: 28px;
+    margin-bottom: 20px;
+    padding-top: 28px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid @border-clr;
+  }
+
+  &__title {
+    .null();
+    margin-bottom: 7px;
+    .font(17px; 700; 24px);
+  }
+
+  &__info {
+    .null();
+    font-size: 13px;
+  }
+
+  &__buy {
+    position: relative;
+    display: block;
+    margin-left: 28px;
+    margin-right: 28px;
+    margin-bottom: 28px;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 1px;
+    right: -1px;
+    width: 20px;
+    height: 19px;
+    opacity: 20%;
+  }
+
+  &__icon:hover  {
+    opacity: 100%;
+    fill: @main;
+  }
+
+  &__icon:active {
+    fill: @main;
+    opacity: 30%;
+  }
+
+  &__title:hover  {
+    opacity: 60%;
+  }
+
+  &__title:active  {
+  opacity: 30%;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .item__text-info {
+      box-shadow: 0 6px 10px 0 rgba(0,0,0,0.1);
+    }
+  }
+
+  &:active {
+    .item__text-info {
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.1);
+    }
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .item {
+    margin-bottom: 54px;
+
+    &__text-info {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      margin-top: 0;
+      border-left: none;
+    }
+
+    &__link {
+      display: flex;
+    }
+
+    &__container {
+      width: 334px;
+      height: 334px;
+    }
+
+    &__img {
+      width: 334px;
+      height: auto;
+    }
+
+    &__name {
+      width: 306px;
+      .null();
+      margin-left: 26px;
+      padding-top: 25px;
+      border: none;
+    }
+
+    &__title {
+      width: 230px;
+      margin-bottom: 5px;
+      .font(20px; 700; 24px);
+    }
+
+    &__info {
+      width: 230px;
+      .font(15px; 400; 30px);
+    }
+
+    &__buy {
+      width: 248px;
+      margin-left: auto;
+      margin-right: 32px;
+      margin-bottom: 25px;
+      padding-top: 23px;
+      padding-right: 20px;
+      .font(17px; 700; 24px);
+      border-top: 1px solid @border-clr;
+    }
+
+    &__icon {
+      top: 22px;
+    }
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .item {
+    margin-bottom: 0;
+
+    &__text-info {
+      border-left: 1px solid @border-clr;
+    }
+
+    &__link {
+      flex-direction: column;
+    }
+
+    &__container {
+      width: 316px;
+      height: 462px;
+    }
+
+    &__image {
+      width: 316px;
+      height: auto;
+    }
+
+    &__name {
+      width: 287px;
+      min-height: 97px;
+      padding-top: 27px;
+    }
+
+    &__buy {
+      width: 256px;
+      margin-top: 0;
+      padding-right: 0;
+    }
+  }
+}

@@ -1,0 +1,102 @@
+/* field-tel */
+
+.field-tel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 33px;
+
+  &__legend {
+    width: 60px;
+  }
+
+  &__field {
+    position: relative;
+    z-index: 1;
+    border: none;
+    border-bottom: 2px solid @border-clr-dark;
+    padding-top: 17px;
+    padding-bottom: 13px;
+    padding-right: 40px;
+    .font(19px; 400; 18px);
+    background-color: transparent;
+
+    &::placeholder {
+      color: @placeholder;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 33px;
+    right: 8px;
+    width: 25px;
+    height: 24px;
+    opacity: 20%;
+  }
+
+  &__field:hover {
+    border-color: @main;
+  }
+
+  &__field:active,
+  &__field:focus {
+    border-color: @main;
+    &::placeholder {
+      color: @placeholder-active;
+    }
+  }
+
+  &__field:hover ~ &__icon,
+  &__field:focus ~ &__icon,
+  &__field:active ~ &__icon {
+    opacity: 100%;
+    fill: @main;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .field-tel {
+    flex-direction: row;
+    align-items: baseline;
+    .container(668px; 50px);
+    margin: 0 auto;
+    margin-bottom: 19px;
+
+    &__field {
+      box-sizing: border-box;
+      width: 500px;
+      margin-top: 45px;
+      margin-left: auto;
+      padding-top: 16px;
+      padding-left: 16px;
+      padding-right: 55px;
+    }
+
+    &__icon {
+      top: 61px;
+      right: 76px;
+    }
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .field-tel {
+    .container(1050px; 50px);
+
+    &__legend {
+      margin-left: 62px;
+    }
+
+    &__field {
+      width: 700px;
+      margin-right: 175px;
+      padding-right: 40px;
+    }
+
+    &__icon {
+      top: 61px;
+      right: 233px;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+/* mixins.less */
+
+.container(@width; @padding) {
+  width: @width;
+  padding-left: @padding;
+  padding-right: @padding;
+}
+
+.center(@width) {
+  width: @width;
+  margin: 0 auto;
+}
+
+.font(@size; @weight; @line-height) {
+  font-size: @size;
+  font-weight: @weight;
+  line-height: @line-height;
+}
+
+.button(@width: 260px; @min-height: 52px;) {
+  width: @width;
+  min-height: @min-height;
+  .font(17px; 700; 20px);
+  text-align: center;
+  text-transform: uppercase;
+  border: 2px solid @btn-color;
+  color: @btn-color;
+  background-color: transparent;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.null(@margin: 0; @padding: 0) {
+  margin: @margin;
+  padding: @padding;
+}

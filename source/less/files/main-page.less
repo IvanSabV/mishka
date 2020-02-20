@@ -1,0 +1,68 @@
+/* main.less */
+
+.main {
+  &__head {
+  background: url(../img/hero-mobile.jpg) no-repeat 0 0;
+  background-position: 50% -15px;
+  background-color: @bg-color;
+  }
+
+  &__title {
+    font-size: 27px;
+    line-height: 30px;
+    .container(260px; 30px);
+    margin: 0 auto;
+    padding-top: 75px;
+    padding-bottom: 120px;
+    text-align: center;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .main {
+    &__head {
+    background: url(../img/hero-tablet@1x.jpg) no-repeat 0 0;
+    background-position: 50% -2px;
+    background-color: @bg-color;
+
+      @media (min-resolution: @retina-dppx) {
+        background-image: url("../img/hero-tablet@2x.jpg");
+        background-size: 1150px auto;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        margin-top: -22px;
+        z-index: 1;
+        width: 100%;
+        height: 37px;
+        background: url(../img/zigzag-fill.svg) repeat-x center bottom;
+        background-size: auto 37px;
+      }
+    }
+
+    &__title {
+      .container(668px; 50px);
+      padding-top: 155px;
+      padding-bottom: 372px;
+      font-size: 43px;
+      line-height: 50px;
+    }
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .main {
+    &__head {
+    background-position: 50% -5px;
+    }
+
+    &__title {
+      width: 1050px;
+      padding-bottom: 356px;
+      font-size: 53px;
+      line-height: 57px;
+    }
+  }
+}
