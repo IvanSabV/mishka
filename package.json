@@ -51,6 +51,7 @@
   "dependencies": {
     "imagemin-jpegtran": "^6.0.0",
     "imagemin-optipng": "^7.1.0",
-    "imagemin-svgo": "^7.0.0"
+    "imagemin-svgo": "^7.0.0",
+    "normalize.css": "^8.0.1"
   }
 }
