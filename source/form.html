@@ -10,9 +10,6 @@
 
 </head>
 <body>
-  <div style="display: none">
-    <include src="build/img/sprite.svg"></include>
-  </div>
   <header class="head">
     <div class="head__wrapper">
       <div class="head__nav-top">
@@ -20,13 +17,13 @@
         <picture>
           <source media="(min-width: 1150px)" srcset="img/mishka-logo-desktop.svg">
           <source media="(min-width: 768px)" srcset="img/mishka-logo-tablet.svg">
-          <img class="head__logo-img" width="86" src="img/mishka-logo-mobile.svg">
+          <img class="head__logo-img" width="86" src="img/mishka-logo-mobile.svg" alt="Логотип интернет-магазина Мишка">
         </picture>
         </a>
       </div>
       <div class="nav-main nav-main--closed">
         <div class="head__nav nav-main__icon">
-          <img class="img-nav" width="20" src="img/icon-menu.svg">
+          <img class="img-nav" width="20" src="img/icon-menu.svg" alt="Меню">
         </div>
         <nav class="menu-main nav-main__left">
           <ul class="menu-main__list">
@@ -59,7 +56,7 @@
               Корзина: пока пуста</a>
           </li>
           <li class="cart-del__item--tablet">
-            <p class="cart-del__link--tablet" href="#">
+            <p class="cart-del__link--tablet">
             Бесплатная доставка по России</p>
           </li>
         </ul>
@@ -74,7 +71,7 @@
     </section>
 
 	  <p class="form-order__descr">Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы свяжемся с вами, чтобы уточнить детали.</p>
-    <form class="order" action="" method="post">
+    <form class="order" action="form.html" method="post">
       <fieldset class="order__field field-type">
         <legend class="order__legend field-type__legend">Тип</legend>
         <ul class="order__list field-type__list">
@@ -143,13 +140,13 @@
           <div class="order__field-tel field-tel">
             <label class="order__legend field-tel__legend">Тел</label>
             <input class="order__field field-tel__field" type="tel" name="phone" placeholder="+7 XXX XXX XX XX*" required>
-            <img class="field-tel__icon" width="25" src="img/icon-phone.svg">
+            <img class="field-tel__icon" width="25" src="img/icon-phone.svg" alt="Телефон">
           </div>
 
           <div class="order__field-email field-email">
             <label class="order__legend field-email__legend">E-mail</label>
             <input class="order__field field-email__field" type="email" name="email" placeholder="Ваш Email*" required>
-            <img class="field-email__icon" width="32" src="img/icon-mail.svg">
+            <img class="field-email__icon" width="32" src="img/icon-mail.svg" alt="Почта">
           </div>
         </div>
 
