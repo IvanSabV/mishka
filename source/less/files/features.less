@@ -13,31 +13,40 @@
   }
 
   &__week {
-    .font(17px; 700; 20px);
+    .font(17px; 700; 9px);
     text-transform: uppercase;
     color: @main;
-    padding-bottom: 30px;
+    padding-bottom: 27px;
   }
 
   &__title {
     .font(25px; 700; 30px);
-    padding: 34px 0 10px 0;
+    padding: 28px 0 10px 0;
     margin: 0;
+  }
+
+  &__descr {
+    line-height: 24px;
   }
 
   &__charact {
     display: flex;
-    padding-top: 34px;
+    padding-top: 19px;
   }
 
   &__charact-col-1 {
     padding-right: 30px;
+    height: 40px;
+    display: flex;
+    box-shadow: inset 0 -1px 0 0 @shadow;
+    align-items: center;
   }
 
-  &__charact-row {
-    box-shadow: inset 0 -1px 0 0 @shadow;
+  &__charact-col-2 {
     height: 40px;
-
+    display: flex;
+    box-shadow: inset 0 -1px 0 0 @shadow;
+    align-items: center;
   }
 
   &__main-img {
@@ -47,7 +56,8 @@
   &__cost {
     .font(17px; 700; 24px);
     text-align: center;
-    padding-bottom: 28px;
+    padding-bottom: 27px;
+    margin-top: -11px;
   }
 
   &__button {
@@ -87,14 +97,14 @@
       flex-direction: row-reverse;
       justify-content: space-between;
       align-items: flex-end;
-      margin-bottom: 48px;
+      margin-bottom: 52px;
     }
 
     &__week {
       width: 72px;
       padding-left: 27px;
       padding-right: 27px;
-      padding-bottom: 4px;
+      padding-bottom: 0;
       line-height: 20px;
       text-align: center;
     }
@@ -123,12 +133,14 @@
 
     &__charact {
       width: 290px;
-      margin-bottom: 56px;
+      margin-bottom: 69px;
+      padding-top: 36px;
     }
 
     &__cost {
       width: 290px;
       font-size: 20px;
+      padding-bottom: 34px;
     }
 
     &__button {
@@ -163,7 +175,7 @@
     &__title {
       z-index: 1;
       max-width: 700px;
-      padding-top: 118px;
+      padding-top: 125px;
       font-size: 53px;
       line-height: 57px;
     }
@@ -180,7 +192,8 @@
 
     &__charact {
       margin-left: 175px;
-      margin-bottom: 112px;
+      margin-bottom: 121px;
+      padding-top: 43px;
     }
 
     &__cost {
