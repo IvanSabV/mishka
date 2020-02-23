@@ -33,9 +33,9 @@ gulp.task('browser-sync', function() {
     notify: false,
   });
 
-  gulp.watch('source/less/**/*.less', gulp.series('less')); // Наблюдение за sass файлами
+  gulp.watch('source/less/**/*.less', gulp.series('less')); 
   gulp.watch("source/img/icon-*.svg", gulp.series('sprite', 'code'));
-  gulp.watch('source/*.html', gulp.series('code')); // Наблюдение за HTML файлами в корне проекта
+  gulp.watch('source/*.html', gulp.series('code')); 
 
 });
 
@@ -46,17 +46,17 @@ gulp.task('code', function() {
 });
 
 gulp.task('clean', async function() {
-  return del.sync('build'); // Удаляем папку build перед сборкой
+  return del.sync('build'); 
 });
 
 gulp.task('img', function() {
-  return gulp.src('source/img/**/*') // Берем все изображения из app
+  return gulp.src('source/img/**/*') 
       .pipe(imagemin([
         imagemin.optipng({optimizationlevel: 3}),
         imagemin.mozjpeg({progressive: true}),
         imagemin.svgo()
         ]))
-      .pipe(gulp.dest('build/img')); // Выгружаем на продакшен
+      .pipe(gulp.dest('build/img')); 
 });
 
 gulp.task("webp", function () {
@@ -76,13 +76,13 @@ gulp.task("sprite", function () {
 
 gulp.task('prebuild', async function() {
 
-    var buildFonts = gulp.src('source/fonts/**/*.{woff,woff2}') // Переносим шрифты в продакшен
+    var buildFonts = gulp.src('source/fonts/**/*.{woff,woff2}') 
     .pipe(gulp.dest('build/fonts'))
 
-    var buildJs = gulp.src('source/js/**/*') // Переносим скрипты в продакшен
+    var buildJs = gulp.src('source/js/**/*') 
     .pipe(gulp.dest('build/js'))
 
-    var buildHtml = gulp.src('source/*.html') // Переносим HTML в продакшен
+    var buildHtml = gulp.src('source/*.html') 
     .pipe(gulp.dest('build'));
 
 });
